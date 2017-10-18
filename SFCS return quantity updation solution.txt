@@ -1,0 +1,21 @@
+Connect to the server using the the credentials [100.29/30/33/108]
+acess the URL bai2net:8888 -> SFCS -> bai-2
+-> workplace -> movex -> M3 bla bla -> Audit log.
+-> check the IMS dashboard.
+-> spot the issue.
+-> access the db with baiappsrv02[db], sfcsproject1[user], sfcs_tech[password].
+-> in table bai_pro3.ims_log_backup search by schedule_no, sfcs_tran.pef_id and check the status.
+
+take the quantity by the schedule no, color or style.
+later update the quantity as per the issue.
+
+for reference we should check workplacce -> sweing -> output verification.
+
+pop trans auditlog
+
+
+insert into bai_pro3.ims_log  [insert the balance negative quantity so add. (probably the return quantity)]
+select * from bai_pro3.ims_log_backup whetre t.id = ''
+delete from bai_pro3.ims_log_backup where t.id = ''
+
+so check again in the dashboard. if the quantity is fine issue is cleared.
