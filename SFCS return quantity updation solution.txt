@@ -1,6 +1,6 @@
 Connect to the server using the the credentials [100.29/30/33/108]
 acess the URL bai2net:8888 -> SFCS -> bai-2
--> workplace -> movex -> M3 bla bla -> Audit log.
+-> workplace -> movex -> M3 Bulk Operation Reporting -> Audit log.
 -> check the IMS dashboard.
 -> spot the issue.
 -> access the db with baiappsrv02[db], sfcsproject1[user], sfcs_tech[password].
@@ -9,7 +9,7 @@ acess the URL bai2net:8888 -> SFCS -> bai-2
 take the quantity by the schedule no, color or style.
 later update the quantity as per the issue.
 
-for reference we should check workplacce -> sweing -> output verification.
+for reference we should check workplace -> sweing -> output verification.
 
 pop trans auditlog
 
