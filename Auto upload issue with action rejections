@@ -1,0 +1,14 @@
+Auto upload issue with action rejections
+
+WebPage:- BAI1 -> Workplace -> Movex -> M3 Bulk Operation Reporting -> Audit Log
+Database:- m3_bulk_ops_rep_db
+Table:- m3_sfcs_tran_log
+Procedure:-
+-> get the details with schedule number and the filter it with other info [such as color, tid etc]
+-> get the record with tid in the database [tid is colected from the audit log in SFCS]
+-> update the status as appropriate as per the client request.
+Hence issue resolved
+
+queries:- 
+Select : SELECT 	* FROM `m3_bulk_ops_rep_db`.`m3_sfcs_tran_log` WHERE sfcs_tid IN (x, x)
+Update : UPDATE `m3_bulk_ops_rep_db`.`m3_sfcs_tran_log` SET sfcs_status='16' WHERE sfcs_tid IN (x, x)
