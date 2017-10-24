@@ -1,0 +1,40 @@
+Ticket No. : 870
+Issue        :  Bai2net cutting quantity issue.
+
+Description :  In SFCS BAI2,   
+      Goto Workplace -> Cut Quantity Report -> Search with Doc No and with Schedule No.
+      There was no data with that particular number.
+      Recheck with the same No. in Audit Log.
+      Goto Workplace -> Movex -> M3 bulk operation Reporting -> Audit Log.
+      Search with Doc No and with Schedule No.
+      -->> No data here.
+
+ So, we have to insert data in cutting and in Audit Log too.
+
+ Totally 3 inserted queries here. These queries executed in Common interface (New Entry Form). 
+Query 1 is for cutting: 
+ INSERT INTO `bai_pro3`.`act_cut_status` (`doc_no`, `date`, `section`,
+`shift`, `fab_received`, `fab_returned`, `damages`, `shortages`,
+`remarks`) VALUES ('448749', '2017-10-24', '4', 'A', '247.8', '0',
+'0', '0', '2017-10-24^4^A^247.8^0^0^0^0^60');
+
+
+Query 2:
+INSERT INTO `m3_bulk_ops_rep_db`.`m3_sfcs_tran_log` (`sfcs_date`,
+`sfcs_style`, `sfcs_schedule`, `sfcs_color`, `sfcs_size`, `m3_size`,
+`sfcs_doc_no`, `sfcs_qty`, `sfcs_log_user`, `sfcs_status`, `m3_mo_no`,
+`m3_op_code`, `sfcs_job_no`, `sfcs_mod_no`, `m3_op_des`,
+`sfcs_tid_ref`) VALUES ('2017-10-24', 'P19768A8       ', '465600',
+'F17-125-12-C002 3WLR          ', 'm', 'M', '448749', '960',
+'narasingaraom@localhost', '0', '4462608', '15', 'A030', '0', 'CUT',
+'448749');
+
+Query 3:
+INSERT INTO `m3_bulk_ops_rep_db`.`m3_sfcs_tran_log` (`sfcs_date`,
+`sfcs_style`, `sfcs_schedule`, `sfcs_color`, `sfcs_size`, `m3_size`,
+`sfcs_doc_no`, `sfcs_qty`, `sfcs_log_user`, `sfcs_status`, `m3_mo_no`,
+`m3_op_code`, `sfcs_job_no`, `sfcs_mod_no`, `m3_op_des`,
+`sfcs_tid_ref`) VALUES ('2017-10-24', 'P19768A8       ', '465600',
+'F17-125-12-C002 3WLR          ', 'l', 'L', '448749', '960',
+'narasingaraom@localhost', '0', '4462606', '15', 'A030', '0', 'CUT',
+'448749');
