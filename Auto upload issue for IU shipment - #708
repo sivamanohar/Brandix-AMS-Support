@@ -1,0 +1,13 @@
+Ticket Number : #708
+      
+      Concern    : Auto Upload issue for IU Shipment.
+
+    Root/Url     : bainet:8080 -> SFCS ->BAI 1 -> work place -> Movex -> M3 bulk operatinon Reporting -> Audit Log
+
+    Description : As per discussion with Mr.Naresh, User who is called as Mr. Murali changed above records manually 
+    through OR Interface on saturday(14.10.2017). In the mean while, we updated and inserted the above concern records in SQL Yog.
+        Database :   m3_bulk_ops_rep_db.
+        Table Name:  m3_sfcs_tran_log.
+
+Monday(16.10.2017):  We asked Mr.Murali to share those modified records by him. Totally there was 40 records. we checked 
+whether the status was in correct form or not through Audit Log. Everything was fine and we closed this ticket by user confirmation.
