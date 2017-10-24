@@ -1,0 +1,13 @@
+ Ticket Number : #681
+      
+      Concern    : Request to enable access to mentioned associates to check the status of employee's ESI number                                       details.
+
+    Root/Url     : [Central Administration] http://bainet:8080/projects/central_administration/mate_table_edit/
+ 
+    Description : In Central Administration,   
+                          1. Goto - > Menu Based Administration
+                          2. Select mentioned UserName and BranchName. Click Search button.
+                          3.Once search button clicked, particular data will appear on the screen.
+                          4. In Link Description field, type esi and click enter which is nothing but search.
+                          5. We should activate the person's access according to their requirement here.
+                          6. End. 
