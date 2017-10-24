@@ -1,0 +1,28 @@
+
+Ticket No. - #775
+
+ Issue : Concern is Mrs.Akula.P  wants data in Mini Order No. 94 but unfortunately data is displaying in Mini Order No.95. 
+
+  Url: In bai3net:8080, Reports -> Bundle wise Performance Reports -> Mini Order Reports.. This path is to trace the path of the particular issue folder.
+
+ We are using  two databases here:
+
+  Database 1: brandix_bts. This db is for internal working purpose.
+               We should check through 'ids' according to the schedule Numbers.
+  Table 1: 
+              tbl_order_master  -> Field Name is 'Product Schedule'
+  Based on table 1 id, we shld search in table 2 id
+ Table2:
+           tbl_min_order_ref -> ref_crt_schedule( Field Name)
+same process in table 3
+
+Table 3:
+     tbl_miniorder_data -> mini_order_ref(Field Name)
+    
+
+    Database 2: brandix_bts_uat . This db is for dashboard purpose.
+         In this DB, we are using two tables to solve this issue.
+         Table1: view_set_3_snap.
+         Table2: view_set_snap_1.. (approx)
+
+       According to the bundle numbers, change mini order number in both databases (tables).
