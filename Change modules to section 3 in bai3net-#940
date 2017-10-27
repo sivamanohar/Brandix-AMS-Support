@@ -1,0 +1,18 @@
+ Ticket No. :940
+     
+    Issue : Request to change modules to section 3.
+
+            change Module 27, 28 to Section 3
+ 
+             In BAI3, Section 1 – Leggings
+                Section 2 – UW
+                Section 3 – T shirts/Tops/Cami
+
+Url   :    In Bai3net:8080, Goto ->SFCS -> Control Room -> IPS
+            In sql yog,  
+                   DB - > bai_pro3 
+                   Table -> sections_db
+                   select * from bai_pro3.sections_db.
+
+    Description: 
+                    use update query in sql yog bai3 server and execute in new form entry (common interface).
