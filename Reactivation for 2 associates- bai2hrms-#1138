@@ -1,0 +1,20 @@
+#1138
+issue: Reactivation for two associates
+ Remarks:
+      In sql yog, connect with bai_hrms server.
+      Select db -> bai_hr_database
+      then select tbl -> walk_in_master
+      
+SELECT * FROM bai_hr_database.walk_in_master WHERE emp_id_ref IN (4463,1687);
+    
+UPDATE `bai_hr_database`.`walk_in_master` SET `w_status`='45',`emp_dol`='0000-00-00',`emp_dor`='0000-00-00' WHERE emp_id_ref IN (4463,1687);
+
+Based on these two ids, we have to ref with w_pid in walkin_status_log table..
+ We have to insert these two queries here..
+ 
+INSERT INTO bai_hr_database.walkin_status_log(w_pid_ref, w_status_ref, w_status_remarks, log_user) 
+VALUES('3799','45','Based on Sankar Approval on 2017-11-02','Admin');
+
+INSERT INTO `bai_hr_database`.`walkin_status_log`(w_pid_ref, w_status_ref, w_status_remarks, log_user) 
+VALUES('6446','45','Based on Sankar Approval on 2017-11-02','Admin');
+
