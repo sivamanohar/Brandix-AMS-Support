@@ -1,0 +1,24 @@
+issue: Mod.No-16 Transfer issue in Bai_HRMS
+
+Concern:This is brings to your perceive that,
+Mod. No- 16 transferred to Section-4  from Section-1, The Module number also got changed as Mod-63
+But in HRMS still they are allocated in Section-1,
+Hence request you pls change their allocation to Section-4 with revised Mod.no 63.
+Pls do check their incentive issue also.
+
+Go to -> Bai1_HRMS
+ DB --> bai_hr_database
+ Table --> emp_section_reference
+ 
+ Select * from bai_hr_database.emp_section_reference
+ 
+ In this table '0' refers to active mode 
+   and '1' refers to inactive mode.
+   
+   here we have to disable mod.No-16 and enable mod.no-63 and also change section 1 to sec.4.
+   
+   
+   UPDATE bai_hr_database.emp_section_reference SET mod_status='1' WHERE mod_pid='16'
+   
+   
+ 
