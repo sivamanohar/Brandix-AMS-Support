@@ -1,0 +1,23 @@
+issue:  JobSheet Issue_#1307_SL-Beka
+As a Cut plan Job sheet value different
+In job sheet  Cut job# 1 value should be 66 (Size L)
+   Cut job# 2 value should be 4 (Size L)
+   Schedule No. - 469347.
+
+Description:
+
+     connect with invpn1 check point -> Remote Desktop ->
+     In Sql Yog,
+          Sl_Beka_Sfcs,
+          Host Name: bekasfcs02
+          User Name: baiall
+          password: bekaall
+          port: 3306
+          
+          DB --> bai_pro3
+          Table --> pac_stat_log_input_job
+         
+         SELECT * FROM `bai_pro3`.`pac_stat_log_input_job` WHERE input_job_no_random LIKE '%469347%'
+         carton_act_qty column is manually updated in table pac_stat_log_input_job  manually to resolve the above problem.
+
+For the cut1 added quantity 1 and in cut3 reduced quantity 1.
