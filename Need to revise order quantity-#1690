@@ -1,0 +1,22 @@
+#1690
+issue: Need to revise order quantity- BAI3SFCS
+ Remarks:
+ In sql yog, connect with bai3sfcs server.
+ 
+ DB -->bai3_finishing.
+ Table --> order_db.
+ 
+ We must change  required quantities in order_qty (order_db)
+ 
+ Queries:
+ 
+ SELECT * FROM bai3_finishing.order_db WHERE schedule_no='481542'
+
+UPDATE bai3_finishing.order_db SET order_qty=output WHERE schedule_no='481542'
+
+execute the update query with backup query.
+Recheck with select query whether the query was updated or not.
+End the task.
+ 
+  
+      
