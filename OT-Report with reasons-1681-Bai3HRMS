@@ -1,0 +1,42 @@
+issue: OT-Report with reasons from 1st to 25th Nov 2017.
+Please send OT Report with Reasons from 1st to 25th Nov’17. ASAP
+
+In SQL Yog, select Bai3-Hrms server..
+
+select * from bai_hr_ot.ot_master as op left join bai_hr_ot.ot_log as oc on 
+op.tid=oc.master_tid where op.date between '2017-11-01' and '2017-11-25';
+
+--> Export the table.. Modify it in excel and save it.
+--> Send this attachment to user through mail.
+--> End the process.
+
+****KT****
+
+Verification process:
+  In bai3_hrms,
+     -->> user-> HR -> Finance
+     
+     In other plants,
+        -->> User -> Finance -> HR.
+  Databases:
+  1.) bai_cms:
+      Table: cms_log_report.
+         --> using for canteen Management system.
+         --> Approvals for processing
+         -->CMS data/Reports data.
+   2.)      bai_hr_database:
+         --> Employee total details.
+         --> Designation and category.
+         -->Over all details about employees.
+         -->Bank account details.
+    3.)bai_hr_epf_db:
+         --> for prefix.
+     4.) bai_hr_payroll:
+          --> using for payroll details.
+      5.)bai_hr_tna_em_1616
+      6.)bai_hr_tna_em_1717
+           -->5 and 6 dbs using for employees
+      7.)bai_hr_tna_tr_1616
+      8.)bai_hr_tna_tr_1717 
+           --> 7 and 8 dbs using for trainees.
+           
