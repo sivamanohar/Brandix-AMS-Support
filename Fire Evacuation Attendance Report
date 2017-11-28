@@ -3,3 +3,16 @@ Not showing pilot zone,HR and Admin and Finance employees attendance
 RM warehouse, inspection and trims employees list not showing completely.
 FG employees should include in their modules
 FG department indirect employees 
+
+
+please find the below queries for reference, it should be executed in BAIDBSRV03 server
+
+select * from `bai_hr_database`.`tbl_fire_evac_assembly_board_details`
+Execution part:
+
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code in (54)' WHERE `sl_no`='37';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code in (68,69,70,71,72,73,74,75,76,77,63,78,79)' WHERE `sl_no`='31';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code in (60,61) AND category_code NOT IN (4,5,6,7,8,10,11)' WHERE `sl_no`='32';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code in (25,62)' WHERE `sl_no`='34';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='(emp_alloc_desg_ref_code in (39) or (emp_alloc_dep_ref_code in (51) and category_code NOT IN (4,5,6,7,8,10,11)))' WHERE `sl_no`='36';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code IN (58,55)' WHERE `sl_no`='27';
