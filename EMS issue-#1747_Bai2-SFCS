@@ -1,0 +1,21 @@
+EMS issue-#1747_Bai2-SFCS
+
+Below Qty we are updated ASPS operation But we are unablr to update ASPR operation ,
+Due to Boxes not showing in EMS Panel, So please check and clear this issue,
+
+Description:
+In Bai2-sfcs server sqlyog,
+
+SELECT * FROM bai_pro3.pac_stat_log_deleted WHERE tid IN (28070335,28070381,28070385,28145756)
+These tid's are carton ids.
+some mischief happened here... we exported the above data and inserted in pac_stat_log table. 
+Once we inserted, delete the above data in pac_stat_log_deleted table.
+queries:
+-->> insert into bai_pro3.pac_stat_log(`tid`, `doc_no`, `size_code`, `carton_no`, `carton_mode`, `carton_act_qty`, `status`, `lastup`, `remarks`, `doc_no_ref`, `container`, `disp_carton_no`, `disp_id`, `audit_status`) values('28070335','457849','m','3','F','600','EGR','2017-11-27 11:42:23',NULL,'457849-28070335','1',NULL,NULL,NULL),
+('28070381','457859','s','3','F','720','EGR','2017-11-27 11:42:12',NULL,'457859-28070381','1','1',NULL,NULL),
+('28070385','457860','s','2','F','720','EGR','2017-11-27 11:42:28',NULL,'457860-28070385','1','1',NULL,NULL),
+('28145756','457850','l','2','P','240','EGR','2017-11-27 13:37:29',NULL,'457850-28145756','4',NULL,NULL,NULL);
+
+SELECT * FROM bai_pro3.pac_stat_log_deleted WHERE tid IN (28070335,28070381,28070385,28145756)
+
+DELETE FROM bai_pro3.pac_stat_log_deleted WHERE tid IN (28070335,28070381,28070385,28145756)
