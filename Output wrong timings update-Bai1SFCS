@@ -1,0 +1,22 @@
+Output wrong timings update- Bai1SFCS
+Dear Schemax team,
+Section 1  , hour 9am -10am We had updated output in wrong timings . Instead of  9 to 10 morning (team –A)  our recorder has updated in 9-10 (Evening team –A)  . So please change the correct timings  as “9 am to 10am”.
+Please find the attached details for your reference.
+
+Description:
+ In Sql yog, connect with Bai1-SFCS..
+ 
+ Goto bai_pro database..
+ As per user request, Update timings in bai_log and in bai_log_buf.
+ 
+ Table 1:
+ 
+ UPDATE bai_pro.bai_log SET `bac_lastup`='2017-11-29 09:00:00' WHERE tid IN(5534788,5534806,5534807,5534808....)
+ backup query:
+ SELECT * FROM bai_pro.bai_log WHERE tid IN(5534788,5534806,5534807,5534808....)
+ 
+ Table2:
+ 
+ UPDATE bai_pro.bai_log_buf SET `bac_lastup`='2017-11-29 09:00:00' WHERE tid IN(5534788,5534806,5534807,5534808....)
+ backup query:
+ SELECT * FROM bai_pro.bai_log_buf WHERE tid IN(5534788,5534806,5534807,5534808....)
