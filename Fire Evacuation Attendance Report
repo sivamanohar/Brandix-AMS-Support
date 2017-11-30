@@ -16,3 +16,13 @@ UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='em
 UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code in (25,62)' WHERE `sl_no`='34';
 UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='(emp_alloc_desg_ref_code in (39) or (emp_alloc_dep_ref_code in (51) and category_code NOT IN (4,5,6,7,8,10,11)))' WHERE `sl_no`='36';
 UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause`='emp_alloc_dep_ref_code IN (58,55)' WHERE `sl_no`='27';
+
+[Naresh] 30/11 
+Need to change department codes of RM (trims and inspection), FG warehouse and training centre
+execution queries:
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause` = 'emp_alloc_dep_ref_code IN(55)' WHERE `sl_no` = '26';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause` = 'emp_alloc_dep_ref_code IN (58,57)' WHERE `sl_no` = '27';
+UPDATE `bai_hr_database`.`tbl_fire_evac_assembly_board_details` SET `clause` = 'emp_alloc_dep_ref_code IN (56) AND category_code NOT IN (4,5,6,7,8,10,11) and emp_alloc_desg_ref_code not in (71)' WHERE `sl_no` = '29';
+
+Backup query:
+SELECT * FROM `bai_hr_database`.`tbl_fire_evac_assembly_board_details` WHERE `sl_no` IN (26,27,29);
