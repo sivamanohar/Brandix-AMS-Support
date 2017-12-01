@@ -1,0 +1,15 @@
+#OT sheet error - 1790
+Bai2 HRMS
+
+In sql yog bai2Hrms,
+   Select Db--> bai_hr_ot
+      tbl --> two tables --> ot_master, ot_log.
+      In ot_master, search with tid number of 8815.
+      then search with tid='8815' in ot_log. change the status with number 2(Rejection) with update query.
+
+1.) SELECT * FROM bai_hr_ot.ot_master WHERE tid='8815'
+2.) SELECT * FROM bai_hr_ot.ot_log WHERE master_tid='8815'
+
+   UPDATE bai_hr_ot.ot_log SET status='2' WHERE master_tid='8815';
+   
+   
