@@ -1,0 +1,28 @@
+EMS issue- ASPR and ASPS- Passing negative entries-Bai2SFCS
+
+SELECT * FROM bai_pro3.pac_stat_log WHERE doc_no IN (SELECT doc_no FROM bai_pro3.plandoc_stat_log WHERE order_tid LIKE '% 480855%');
+
+SELECT * FROM bai_pro3.pac_stat_log WHERE tid='28204942'
+
+SELECT * FROM m3_bulk_ops_rep_db.m3_sfcs_tran_log WHERE sfcs_schedule=480855 AND sfcs_tid_ref='28204942';
+
+SELECT * FROM bai_pro3.pac_stat_log_deleted WHERE tid IN ('28070335','28145756','28070381','28070385','28177200','28177199','28177201','28177202','28177206','28177203','28177269','28177207','28177204','28177205','28177225','28177231','28177208','28177209','28177215','28177245','28195069');
+
+Execution query for passing negative entries:
+ we have size and negative quantities. Based on that we updated..
+ 
+SELECT * FROM m3_bulk_ops_rep_db.m3_sfcs_tran_log WHERE sfcs_schedule='480855' AND m3_op_des='ASPR' GROUP BY sfcs_size ORDER BY sfcs_size
+
+SELECT * FROM m3_bulk_ops_rep_db.m3_sfcs_tran_log WHERE sfcs_schedule='480855' AND m3_op_des='ASPS' GROUP BY sfcs_size ORDER BY sfcs_size
+
+insert into m3_bulk_ops_rep_db.`m3_sfcs_tran_log` (`sfcs_date`, `sfcs_style`, `sfcs_schedule`, `sfcs_color`, `sfcs_size`, `m3_size`, `sfcs_doc_no`, `sfcs_qty`, `sfcs_log_user`, `sfcs_status`, `m3_mo_no`, `m3_op_code`, `sfcs_job_no`, `sfcs_mod_no`, `sfcs_shift`, `m3_op_des`, `sfcs_tid_ref`) values('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','l','L','457851','-10094','bainet@localhost','16','4473208','144','A008','','','ASPR','28070346'),
+('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','m','M','457851','-13635','bainet@localhost','16','4473209','144','A008','','','ASPR','28070343'),
+('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','s','S','457859','-1020','bainet@localhost','16','4473210','144','A016','','','ASPR','28145763'),
+('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','xs','XS','457857','-639','bainet@localhost','16','4473211','144','A014','','','ASPR','28070371');
+
+
+insert into m3_bulk_ops_rep_db.`m3_sfcs_tran_log` (`sfcs_date`, `sfcs_style`, `sfcs_schedule`, `sfcs_color`, `sfcs_size`, `m3_size`, `sfcs_doc_no`, `sfcs_qty`, `sfcs_log_user`, `sfcs_status`, `m3_mo_no`, `m3_op_code`, `sfcs_job_no`, `sfcs_mod_no`, `sfcs_shift`, `m3_op_des`, `sfcs_tid_ref`) values('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','l','L','457851','-13528','bainet@localhost','16','4473208','143','A008','','','ASPS','28070347'),
+('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','m','M','457851','-18210','bainet@localhost','16','4473209','143','A008','','','ASPS','28070344'),
+('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','s','S','457116','-3060','bainet@localhost','16','4473210','143','A001','','','ASPS','28109839'),
+('2017-12-01','P19919F8       ','480855','S18-060 C008 3XLP             ','xs','XS','457857','-1239','bainet@localhost','16','4473211','143','A014','','','ASPS','28070371');
+
