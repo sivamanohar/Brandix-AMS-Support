@@ -6,6 +6,10 @@ Due to Boxes not showing in EMS Panel, So please check and clear this issue,
 Description:
 In Bai2-sfcs server sqlyog,
 
+SELECT * from bai_pro3.ims_log where ims_doc_no IN(457859,457850,457849,457860,457847,457849,...)
+  
+  Based on this we have to select tids...
+  
 SELECT * FROM bai_pro3.pac_stat_log_deleted WHERE tid IN (28070335,28070381,28070385,28145756)
 These tid's are carton ids.
 some mischief happened here... we exported the above data and inserted in pac_stat_log table. 
